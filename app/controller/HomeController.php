@@ -1,11 +1,11 @@
 <?php
 namespace App\Controller;
 
-class HomeController extends View
+class HomeController
 {
     public function index($params)
     {
-        $this->view("home", "main", [
+        View::render("home", "main", [
             "title" => "Inicio", 
             "params" => $params
         ]);

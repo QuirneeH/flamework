@@ -2,7 +2,7 @@
 
 <!-- Styles CSS -->
 <?php $this->unshift('styles') ?>
-<link rel="stylesheet" href="public/css">
+<link rel="stylesheet" href="public/css/auth.css">
 <?php $this->end() ?>
 <!-- /Styles CSS -->
 
@@ -33,10 +33,11 @@
 
 <!-- Mensagem de Erro -->
 <?php
-    if(!isset($_SESSION['messages']['error'])) {
+    if(!isset($_SESSION['error'])) {
         
     } else {
-        print_r($_SESSION['messages']['error']);
+        print_r($_SESSION['error']);
+        unset($_SESSION['error']);
     }
     
     $this->stop();

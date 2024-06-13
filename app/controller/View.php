@@ -3,13 +3,11 @@ namespace App\Controller;
 
 use League\Plates\Engine;
 
-abstract class View
+class View
 {
-    public function view(string $page, string $view, array $datas = []): void
+    public static function render(string $page, string $view, array $datas = []): void
     {
-        $diretoryView = "public/views/{$page}";
-        
-        $templates = new Engine($diretoryView);
+        $templates = new Engine("public/views/{$page}");
         echo $templates->render($view, $datas);
     }
 }
